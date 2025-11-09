@@ -182,13 +182,13 @@ class CanvasManager {
     if (!stroke.points || stroke.points.length === 0) return;
     
     const ctx = this.ctx;
-    ctx.save();
+    ctx.globalCompositeOperation = 'source-over';
     if (stroke.type === 'eraser') {
-      ctx.globalCompositeOperation = 'destination-out';
-      ctx.strokeStyle = 'rgba(0,0,0,1)';
+      ctx.strokeStyle = '#ffffff';
+      ctx.fillStyle = '#ffffff';
     } else {
-      ctx.globalCompositeOperation = 'source-over';
       ctx.strokeStyle = stroke.color;
+      ctx.fillStyle = stroke.color;
     }
     
     ctx.lineWidth = stroke.lineWidth;
@@ -318,3 +318,4 @@ class CanvasManager {
     this.currentLineWidth = width;
   }
 }
+
