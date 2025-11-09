@@ -1,5 +1,7 @@
 # Collaborative Drawing Board
 
+**Live Demo:** https://flam-frontend-assessment.onrender.com
+
 A real-time drawing application where multiple users can draw together on the same canvas.
 
 ## Features
@@ -72,3 +74,4 @@ Approximately 5-6 hours:
 - WebSocket integration: 1.5 hours
 - Room functionality: 1 hour
 - Testing and refinement: 1 hour
+
