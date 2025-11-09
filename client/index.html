@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="join-screen">
+    <div class="join-box">
+      <h2>Join Drawing Room</h2>
+      <input type="text" id="user-name-input" placeholder="Your Name" required>
+      <input type="text" id="room-id-input" placeholder="Room ID" required>
+      <button id="join-btn">Join Room</button>
+    </div>
+  </div>
+
+  <div id="app-screen" style="display: none;">
+    <div class="container">
+      <header>
+        <h1>Drawing Board</h1>
+        <div class="header-info">
+          <span id="room-name"></span>
+          <span id="current-user"></span>
+        </div>
+      </header>
+
+      <div class="main-area">
+        <div class="sidebar">
+          <div class="section">
+            <h3>Tools</h3>
+            <button id="brush-tool" class="tool-btn active">Brush</button>
+            <button id="eraser-tool" class="tool-btn">Eraser</button>
+          </div>
+
+          <div class="section">
+            <h3>Color</h3>
+            <input type="color" id="color-picker" value="#000000">
+          </div>
+
+          <div class="section">
+            <h3>Size</h3>
+            <input type="range" id="line-width" min="1" max="50" value="3">
+            <span id="line-width-value">3</span>px
+          </div>
+
+          <div class="section">
+            <h3>Actions</h3>
+            <button id="undo-btn" class="action-btn">Undo</button>
+            <button id="redo-btn" class="action-btn">Redo</button>
+            <button id="clear-btn" class="action-btn danger">Clear</button>
+          </div>
+
+          <div class="section users-section">
+            <h3>Users (<span id="user-count">0</span>)</h3>
+            <ul id="user-list"></ul>
+          </div>
+        </div>
+
+        <div class="canvas-container">
+          <canvas id="main-canvas"></canvas>
+          <canvas id="cursor-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="canvas.js"></script>
+  <script src="websocket.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
